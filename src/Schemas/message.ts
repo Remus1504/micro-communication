@@ -15,7 +15,7 @@ const messageSchema: ObjectSchema = Joi.object().keys({
     'string.empty': 'Instructor id is required',
     'any.required': 'Instructor id is required',
   }),
-  buyerId: Joi.string().required().messages({
+  studentId: Joi.string().required().messages({
     'string.base': 'Student id is required',
     'string.empty': 'Student id is required',
     'any.required': 'Student id is required',
@@ -41,15 +41,15 @@ const messageSchema: ObjectSchema = Joi.object().keys({
     'any.required': 'Receiver picture is required',
   }),
   isRead: Joi.boolean().optional(),
-  hasEnrolled: Joi.boolean().optional(),
+  hasOffer: Joi.boolean().optional(),
   offer: Joi.object({
     courseTitle: Joi.string().optional(),
     price: Joi.number().optional(),
     description: Joi.string().optional(),
     durationInDays: Joi.number().optional(),
-    oldEnrolmentyDate: Joi.string().optional(),
-    newEnrolmentDate: Joi.string().optional(),
-    enrolled: Joi.boolean().optional(),
+    oldStartDate: Joi.string().optional(),
+    newStartDate: Joi.string().optional(),
+    accepted: Joi.boolean().optional(),
     cancelled: Joi.boolean().optional(),
   }).optional(),
   createdAt: Joi.string().optional(),

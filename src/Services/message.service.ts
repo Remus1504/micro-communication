@@ -7,7 +7,7 @@ import {
   IMessageDetails,
   IMessageDocument,
   lowerCase,
-} from '@remus1504/micrograde';
+} from '@remus1504/micrograde-shared';
 
 const createConversation = async (
   conversationId: string,
@@ -33,18 +33,18 @@ const addMessage = async (
       amount: `${data.offer?.price}`,
       studentUsername: lowerCase(`${data.receiverUsername}`),
       instructorUsername: lowerCase(`${data.senderUsername}`),
-      title: data.offer?.gigTitle,
+      title: data.offer?.courseTitle,
       description: data.offer?.description,
-      durationTime: `${data.offer?.durationInDays}`,
+      durationInDays: `${data.offer?.durationInDays}`,
       template: 'offer',
     };
     // send email
     await publishDirectMessage(
       chatChannel,
-      'micrograde-order-notification',
-      'order-email',
+      'micrograde-enrolment-notification',
+      'enrolment-email',
       JSON.stringify(emailMessageDetails),
-      'Order email sent to notification service.',
+      'Enrolment email sent to notification service.',
     );
   }
   socketIOChatObject.emit('message received', message);

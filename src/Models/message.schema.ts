@@ -1,4 +1,4 @@
-import { IMessageDocument } from '@remus1504/micrograde';
+import { IMessageDocument } from '@remus1504/micrograde-shared';
 import { Model, Schema, model } from 'mongoose';
 
 const messageSchema: Schema = new Schema(
@@ -22,9 +22,9 @@ const messageSchema: Schema = new Schema(
       courseTitle: { type: String, default: '' },
       price: { type: Number, default: 0 },
       description: { type: String, default: '' },
-      deliveryInDays: { type: Number, default: 0 },
-      oldDeliveryDate: { type: String, default: '' },
-      newDeliveryDate: { type: String, default: '' },
+      durationInDays: { type: Number, default: 0 },
+      oldStartDate: { type: String, default: '' },
+      newStartDate: { type: String, default: '' },
       accepted: { type: Boolean, default: false },
       cancelled: { type: Boolean, default: false },
     },

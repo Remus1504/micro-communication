@@ -1,4 +1,4 @@
-import { verifyGatewayRequest } from '@remus1504/micrograde';
+import { verifyGatewayRequest } from '@remus1504/micrograde-shared';
 import { Application } from 'express';
 import { healthRoutes } from './Endpoints/health';
 import { messageRoutes } from '../src/Endpoints/message';

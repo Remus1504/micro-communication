@@ -1,4 +1,4 @@
-import { IConversationDocument } from '@remus1504/micrograde';
+import { IConversationDocument } from '@remus1504/micrograde-shared';
 import { Model, Schema, model } from 'mongoose';
 
 const conversationSchema: Schema = new Schema({

@@ -5,7 +5,7 @@ import {
   BadRequestError,
   IMessageDocument,
   uploads,
-} from '@remus1504/micrograde';
+} from '@remus1504/micrograde-shared';
 import { Request, Response } from 'express';
 import { UploadApiResponse } from 'cloudinary';
 import { addMessage, createConversation } from '../Services/message.service';
@@ -44,9 +44,9 @@ const message = async (req: Request, res: Response): Promise<void> => {
     fileType: req.body.fileType,
     fileSize: req.body.fileSize,
     fileName: req.body.fileName,
-    courseId: req.body.gigId,
-    studentId: req.body.buyerId,
-    instructorId: req.body.sellerId,
+    courseId: req.body.courseId,
+    studentId: req.body.studentId,
+    instructorId: req.body.instructorId,
     senderUsername: req.body.senderUsername,
     senderPicture: req.body.senderPicture,
     receiverUsername: req.body.receiverUsername,

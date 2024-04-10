@@ -4,7 +4,10 @@ import {
   getUserConversationList,
   getUserMessages,
 } from '../Services/message.service';
-import { IConversationDocument, IMessageDocument } from '@remus1504/micrograde';
+import {
+  IConversationDocument,
+  IMessageDocument,
+} from '@remus1504/micrograde-shared';
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 

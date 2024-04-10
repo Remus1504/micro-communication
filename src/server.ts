@@ -6,7 +6,7 @@ import {
   IAuthPayload,
   IErrorResponse,
   winstonLogger,
-} from '@remus1504/micrograde';
+} from '@remus1504/micrograde-shared';
 import { Logger } from 'winston';
 import { config } from '../src/configuration';
 import {
@@ -53,7 +53,7 @@ const securityMiddleware = (app: Application): void => {
   app.use(helmet());
   app.use(
     cors({
-      origin: config.API_GATEWAY_URL,
+      origin: config.API_GATEWAY_ENDPOINT,
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     }),
